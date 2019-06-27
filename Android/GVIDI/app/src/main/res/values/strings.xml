@@ -1,0 +1,90 @@
+<resources>
+    <!-- Main Activity -->
+    <string name="app_name">GVIDI</string>
+    <string name="path_to_save">Path</string>
+    <string name="no_fall">No ha habido caída</string>
+    <string name="fall">¡Caída!</string>
+    <string name="et_normal">Normal</string>
+    <string name="et_freefall">Caída libre</string>
+    <string name="et_impact">Impactado</string>
+    <string name="et_fall">Caída</string>
+    <string name="label_sos">SOS</string>
+    <string name="label_stop">Parada</string>
+    <string name="label_risk">Riesgo:</string>
+    <string name="label_low_risk">BAJO</string>
+    <string name="label_mid_risk">MEDIO</string>
+    <string name="label_high_risk">ALTO</string>
+    <string name="label_rain">Lluvia:</string>
+    <string name="label_temperature">Temperatura:</string>
+    <string name="label_humidity">Humedad:</string>
+    <string name="label_pace">Ritmo:</string>
+    <string name="label_coord">Coordenadas:</string>
+    <string name="label_group_level">Nivel de agrupación:</string>
+    <string name="label_total_distance">Distancia recorrida:</string>
+
+    <!-- Admin participant details activity -->
+    <string name="label_title_extended_activity">Detalles de participante</string>
+    <string name="label_participant_name">Nombre del participante:</string>
+    <string name="label_participant_email">Email del participante:</string>
+    <string name="label_coordinates">Coordenadas:</string>
+    <string name="label_battery_level">Nivel de batería:</string>
+    <string name="label_distance">Distancia recorrida:</string>
+    <string name="label_avg_pace">Ritmo medio:</string>
+    <string name="label_current_pace">Ritmo actual:</string>
+    <string name="label_participant_alerts">Alertas:</string>
+
+    <!-- Admin expedition details activity -->
+
+
+    <!-- Menu strings -->
+    <string name="menu_create_expedition">Crear Expedición</string>
+    <string name="menu_join_expedition">Unirse a Expedición</string>
+    <string name="menu_leave_expedition">Abandonar Expedición</string>
+    <string name="menu_finalize_expedition">Finalizar Expedición</string>
+    <string name="menu_show_expedition_advanced">Ver detalles de expedición</string>
+    <string name="menu_logout">Salir</string>
+
+    <!-- Sign up activity -->
+    <string name="title_activity_signup">SignupActivity</string>
+    <string name="signup_signup">Registrarse</string>
+    <string name="signup_signin">Entrar</string>
+    <string name="signup_name">Nombre</string>
+    <string name="signup_email">Email</string>
+    <string name="signup_password">Contraseña</string>
+    <string name="signup_go">IR</string>
+    <string name="signup_forgot">¿Has olvidado tu contraseña?</string>
+
+    <!-- ResetPassword activity -->
+    <string name="title_activity_reset_password">ResetPasswordActivity</string>
+    <string name="reset_email">Email</string>
+    <string name="reset_password">Reestablecer Contraseña</string>
+    <string name="reset_email_failure">Debe rellenar el campo email</string>
+    <string name="reset_failure">Fallo al reestablecer su contraseña</string>
+    <string name="label_reset_password">Las instrucciones para reestablecer su contraseña le serán enviadas a su e-mail</string>
+    <string name="reset_instructions">Compruebe su email para ver las instrucciones para reestablecer su contraseña</string>
+    <string name="title_activity_admin_extended">AdminExtendedActivity</string>
+    <string name="title_activity_admin_expedition_details">AdminExpeditionDetailsActivity</string>
+
+    <!-- CreateExpedition activity -->
+    <string name="create_expedition">Crear Expedición</string>
+    <string name="expedition_name_create">Nombre de la expedición:</string>
+    <string name="create_exp_text">Para crear una nueva expedición, introduce el nombre de la misma. ¡Tú serás el guía!</string>
+
+    <!-- JoinExpedition activity -->
+    <string name="join_exp_text">Obteniendo la información de las expediciones\nPor favor, espere.</string>
+
+    <!-- Other strings -->
+    <string name="str_meters">metros</string>
+    <string name="str_km">kms</string>
+    <string name="want_stop">participantes han solicitado parar en los últimos</string>
+    <string name="str_min">minutos</string>
+    <string name="percent">%</string>
+    <string name="high">ALTO</string>
+    <string name="med">MEDIO</string>
+    <string name="low">BAJO</string>
+    <string name="calculating">Calculando...</string>
+    <string name="str_lat">Lat</string>
+    <string name="str_lon">Lon</string>
+    <string name="str_pace">min/km</string>
+    <string name="str_stopped">Parado</string>
+</resources>

@@ -1,0 +1,102 @@
+\chapter{Objetivos}
+\label{chap:objetivos}
+
+\drop{E}{n} este capítulo se va a presentar tanto el objetivo que se pretende cumplir con el \mbox{desarrollo} de este proyecto, como los distintos hitos que se conseguirán para lograr el objetivo principal.
+
+
+\section{Objetivo general}
+
+El objetivo principal de este \ac{TFG} es \textbf{la monitorización de la actividad en grupos de expedición, para velar por su seguridad}.
+
+Para llevar a cabo este objetivo, se pretende realizar un análisis en tiempo real del estado individual de cada uno de los participantes del grupo, así como un análisis grupal de tal forma que el guía pueda tener una visión global del grupo de expedición. Como resultado de este análisis se pretende obtener una serie de alertas respondiendo a posibles situaciones de riesgo, tales como caídas o pérdidas de miembros del grupo de expedición. 
+
+\section{Objetivos específicos}
+
+\vspace*{0.21in}
+
+\begin{enumerate}[1)]
+\item \textbf{Diseño y desarrollo de un dispositivo \textit{hardware} equipado con distintos sensores para la monitorización de la actividad de un integrante de un grupo de expedición}
+
+Para realizar un análisis inteligente de los parámetros que se exponen a continuación, se pretende diseñar y desarrollar un dispositivo \textit{hardware}, que realice un procesamiento básico de los datos que capta por los sensores.
+
+Este dispositivo estará constituido por un microcontrolador y un conjunto de sensores. El microcontrolador se encargará de tomar datos de los sensores, además de realizar un procesamiento básico de los datos recibidos, con el objetivo de eliminar valores no válidos que puedan proporcionar los sensores en un momento dado.
+
+\begin{enumerate}[a)]
+\item Control de la posición del cuerpo, con el objetivo de detectar posibles caídas. Para ello se procesarán los datos que se recogen de sensores como el acelerómetro y el giroscopio.
+\item Geolocalizar a los usuarios mediante \acs{GPS}. Se especificará un límite máximo de separación entre el guía y los miembros de la ruta de tal forma que cuando un participante sobrepase este límite de separación, se envíe un mensaje de alerta al guía. El guía también podrá visualizar en tiempo real dónde se encuentran todos los senderistas que conforman la ruta.
+\item Captación de datos sobre temperatura, lluvias y humedad, que son factores de riesgo en el estado de salud de los senderistas, ya que pueden propiciar la aparición de la deshidratación, aumentar las probabilidades de caídas e influir en el ritmo de la ruta.
+\item Diseño de una \ac{PCB} una vez realizado un primer prototipo del dispositivo \textit{hardware}, para eliminar los cables de prototipado y conseguir un prototipo mucho más limpio. Se consigue un prototipo de tamaño más reducido, más manejable y sin riesgos de que los sensores dejen de funcionar por la desconexión puntual de un cable. 
+\end{enumerate}
+
+\item \textbf{Diseño y desarrollo de una aplicación móvil que recibirá los datos del microcontrolador, los analizará y mostrará información relevante para integrantes y guías en tiempo real}
+
+Esta aplicación móvil se encargará de comunicarse con el dispositivo \textit{hardware} para realizar un procesamiento mayor de los datos. Por motivos de eficiencia, se delega el procesamiento de los datos captados por el dispositivo \textit{hardware} en un teléfono móvil, o cualquier otro dispositivo que posea un sistema operativo \textit{Android}. Este procesamiento de los datos incluye el análisis en tiempo real de los mismos, para obtener información relevante para el grupo de expedición. No solo se realizará un análisis a nivel de integrante de la expedición, sino que también se analizará el grupo en sí mismo. 
+
+La información procedente del análisis inteligente será mostrada a los usuarios de tal forma que sea relevante para ellos. Es decir, los guías de la expedición tendrán toda la información a nivel de grupo de expedición. Esta visión global les otorga la posibilidad de anticiparse a situaciones de peligro que se pudiesen generar, como por ejemplo la dispersión excesiva de los miembros del grupo. A su vez, los integrantes de la expedición tendrán una información más individual. 
+
+La aplicación móvil tomará los datos recogidos por el dispositivo \textit{hardware} por medio de \textit{Bluetooth}. Además, recogerá también datos gracias a los sensores integrados en los dispositivos móviles y gracias a \acs{API}s externas. Se hace esto para comparar los valores recogidos desde el dispositivo \textit{hardware} con estos datos captados con el dispositivo móvil y cerciorarnos de que son correctos. De esta forma, se aumenta la fiabilidad de la información final que será otorgada al usuario. También se pretende abaratar el coste del prototipo y reducir el tamaño del microcontrolador diseñado, reduciendo el número de sensores que se van a usar.
+
+Por tanto, se pretende realizar una comunicación de la aplicación móvil con el dispositivo \textit{hardware}, a través de la cual recibirá los datos recogidos por los sensores. El dispositivo móvil realizará una análisis inteligente de los datos y generará alertas si detecta alguna anomalía. Finalmente, la aplicación móvil enviará la información procesada a una plataforma web, para que los senderistas puedan ver de una forma amigable la información de la ruta de una forma mucho más detallada. Se pretende generar una solución escalable, que sea eficiente para grupos de expedición muy numerosos y que pueda ser usada a la vez por muchos grupos de expedición.
+
+\item \textbf{Análisis inteligente y en tiempo real de los datos captados por los sensores del microcontrolador}
+
+Para conseguir el objetivo principal del presente proyecto es crítico realizar un análisis inteligente de los datos que se han captado previamente. En primer lugar, se realizará un procesamiento de los datos para manipularlos en las unidades de medida necesarias. Se desarrollarán los algoritmos que se exponen a continuación. Estos algoritmos, tomarán como entradas los datos previamente procesados.
+
+\begin{enumerate}[a)]
+\item Detección de caídas. A partir de los datos obtenidos por medio del acelerómetro, se implementará un detector de caídas que generará una alerta y avisará al guía en el caso de que un integrante del grupo de expedición sufra una caída. Se pretenden minimizar tanto los falsos positivos, como los falsos negativos, para que las alertas producidas por el detector de caídas sean tenidas en cuenta.  
+\item Grado de dispersión del grupo. A partir de las posiciones individuales de cada uno de los integrantes del grupo con respecto al guía, se generará un coeficiente que indique el grado de dispersión del grupo. Este coeficiente puede usarse para prevenir futuras situaciones de riesgo de pérdida de miembros, ya que el guía puede tomar la decisión de realizar una parada porque el grupo se encuentra muy disperso, entre otras decisiones.
+\item Grado de riesgo de caída. A partir de los datos de sensores de temperatura, humedad, lluvia e iluminación y otros datos como el ritmo actual al que se camina, se pretende generar un coeficiente que indique el riesgo de caída existente en la expedición. A partir de este coeficiente, el guía puede tomar la decisión de aminorar el ritmo actual para disminuir este riesgo de caída.
+\end{enumerate}
+
+\item \textbf{Diseño y desarrollo de una plataforma web para la visualización de los resultados de la expedición}
+
+En la plataforma web se verán reflejadas las estadísticas de la ruta, así como la información que se considere relevante. La plataforma web se usará, por tanto, para que los usuarios del grupo de expedición puedan consultar los detalles de la expedición, bien siga la expedición en curso o ya haya finalizado. Se mantendrá un histórico de expediciones de las que un senderista ha formado parte para que pueda consultar la información de todas ellas y así ver su progresión. 
+
+Aunque los senderistas posean toda la información relevante para ellos en su dispositivo móvil mientras la expedición está en curso, también existe la posibilidad de que puedan contemplar las estadísticas de la expedición en tiempo real en la plataforma web. Esto es útil sobre todo para que familiares o amigos del senderista puedan ver en vivo dónde se encuentra el senderista y si ha generado algún tipo de alerta que pueda indicar que se encuentre o se haya encontrado en una situación de peligro. 
+
+Se pretende, por tanto, realizar una plataforma web que servirá tanto a los senderistas, como al guía del grupo de expedición, para visualizar de una manera amigable la información recogida y procesada anteriormente por medio del dispositivo móvil. 
+
+\end{enumerate}
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{c|c|c|c|c|c|}
+\cline{2-6}
+\rowcolor[HTML]{343434} 
+\cellcolor[HTML]{FFFFFF}{\color[HTML]{FFFFFF} \textbf{}} & {\color[HTML]{FFFFFF} \textbf{\begin{tabular}[c]{@{}c@{}}Recoger\\ datos\end{tabular}}} & {\color[HTML]{FFFFFF} \textbf{\begin{tabular}[c]{@{}c@{}}Limpiar\\ Datos\end{tabular}}} & {\color[HTML]{FFFFFF} \textbf{\begin{tabular}[c]{@{}c@{}}Análisis\\ Inteligente\end{tabular}}} & {\color[HTML]{FFFFFF} \textbf{\begin{tabular}[c]{@{}c@{}}Visualización\\ en tiempo real\end{tabular}}} & {\color[HTML]{FFFFFF} \textbf{\begin{tabular}[c]{@{}c@{}}Histórico de\\ expediciones\end{tabular}}} \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} Microcontrolador}} & {\color[HTML]{000000} \xmark} & {\color[HTML]{000000} \xmark} & {\color[HTML]{000000} } & {\color[HTML]{000000} } & \\ \hline
+\rowcolor[HTML]{FFFFFF} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FFFFFF}App. Móvil} & \xmark & \xmark & \xmark & \xmark &  \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{EFEFEF}App. \textit{Web}} &  &  &  & \xmark & \xmark \\ \hline
+\end{tabular}
+\caption{División de la funcionalidad del proyecto entre sus componentes.}
+\label{table:divisionfunctionality}
+\end{table}
+
+\section{Objetivos docentes}
+
+Además de los objetivos que se pretenden conseguir en el desarrollo de este \ac{TFG}, se pueden describir también una serie de objetivos a cumplir en un plano más personal, relacionado con los conocimientos adquiridos a lo largo del grado en Ingeniería Informática y desarrollados en la consecución de este proyecto.
+
+\begin{enumerate}[1)]
+
+\item Aprender a diseñar un dispositivo \textit{hardware}, basado en la plataforma Arduino. Lograr realizar la conexión del dispositivo con sensores de distinta índole, para procesar de una forma básica los datos que se captan por los sensores. También se incluye el diseño de una \ac{PCB} con todas las conexiones necesarias para interconectar los sensores que se van a usar en el proyecto y el microcontrolador. 
+
+\item Desarrollar una aplicación móvil, para dispositivos con sistema operativo Android. Que la aplicación sea capaz de conectar un dispositivo \textit{hardware} con el dispositivo móvil en el que está instalada por medio de una red de área personal basada en la tecnología \textit{Bluetooth}.
+
+\item Recibir datos de \acs{API}s externas para contrastar los datos recibidos por los sensores y aumentar así la fiabilidad de los mismos.
+
+\item Ser capaz de realizar un procesamiento de los datos captados por los sensores y recibidos de \acs{API}s externas para detectar posibles riesgos en las rutas de senderismo.
+
+\item Desarrollar una plataforma web siguiendo una arquitectura cliente-servidor, usando tecnologías en auge como son React\footnote{\url{https://reactjs.org}} y NodeJS\footnote{\url{https://nodejs.org}}.
+
+\item Aprender a gestionar los tiempos en un proyecto de larga duración, a preceder unas tareas ante otras asignando prioridades y a seguir una metodología de desarrollo ágil a lo largo del proyecto.
+\end{enumerate}
+
+% Local Variables:
+%  coding: utf-8
+%  mode: latex
+%  mode: flyspell
+%  ispell-local-dictionary: "castellano8"
+% End:

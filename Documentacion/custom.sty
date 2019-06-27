@@ -1,0 +1,65 @@
+%% -- Escribe aquí tu personalización del estilo
+
+\usepackage{xspace}
+\usepackage{blindtext}
+\usepackage{float}
+\usepackage{longtable} 
+\usepackage{pdflscape}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{eurosym}
+\usepackage{multicol}
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{svg}
+
+\lstloadlanguages{[ISO]C++, Python, XML}
+\def\esitfg{\emph{esi-tfg}\xspace}
+\def\texcmd#1{\texttt{$\backslash$#1}}
+
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+\definecolor{comments}{RGB}{0,100,0}
+
+\lstset{ frame=Ltb,
+     framerule=0pt,
+     aboveskip=0.5cm,
+     framextopmargin=3pt,
+     framexbottommargin=3pt,
+     framexleftmargin=0.4cm,
+     framesep=0pt,
+     rulesep=.4pt,
+     backgroundcolor=\color{gray97},
+     %
+     stringstyle=\ttfamily\color{comments},
+     showstringspaces = false,
+     basicstyle=\footnotesize\ttfamily,
+     commentstyle=\itshape\color{gray45},
+	 keywordstyle=\bfseries\color{blue},
+     %
+     numbers=left,
+     numbersep=15pt,
+     numberstyle=\tiny,
+     numberfirstline = false,
+     breaklines=true,
+   }
+
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, finally, for, function, if, in, instanceof, new, return, switch, this, throw, try, typeof, var, void, while, with, undefined},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  sensitive=true
+}
+
+% Command to include roman numbers
+\newcommand{\upperRomannumeral}[1]{\uppercase\expandafter{\romannumeral#1}}
+
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+% To add TODOs
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}

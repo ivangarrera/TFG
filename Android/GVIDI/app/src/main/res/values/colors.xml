@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00bcd4</color>
+    <color name="colorPrimaryDark">#0097a7</color>
+    <color name="colorAccent">#f4ff81</color>
+
+    <color name="greenColor">#b2ff59</color>
+    <color name="redColor">#ff8a65</color>
+    <color name="orangeColor">#fb8c00</color>
+
+    <!-- Logo colors -->
+    <color name="colorLogoDark">#143449</color>
+    <color name="colorLogoLight">#8EBF2A</color>
+</resources>

@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ivangarrera.example.Views.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryDark">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/logo_trans" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bluetooth"
+        android:layout_width="match_parent"
+        android:layout_height="512dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="55dp"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_paired"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="29dp"
+            android:text="Dispositivos emparejados"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="25sp" />
+
+        <ListView
+            android:id="@+id/lv_bluetooth"
+            android:layout_width="match_parent"
+            android:layout_height="234dp"
+            android:layout_alignTop="@+id/tv_paired"
+            android:layout_marginTop="50dp" />
+
+        <TextView
+            android:id="@+id/tv_dontfound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/lv_bluetooth"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="278dp"
+            android:text="Si no encuentra su dispositivo en esta lista, emparéjelo primero en la configuración de Bluetooth del dispositivo"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/circle_sos"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="212dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginRight="28dp"
+            android:background="@drawable/round_shape"
+            android:backgroundTint="@color/colorLogoLight">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/circle_stop"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="256dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginRight="28dp"
+            android:background="@drawable/round_shape"
+            android:backgroundTint="@color/colorLogoLight">
+        </ImageView>
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="340dp"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="300dp"
+            android:layout_marginRight="@dimen/fab_margin"
+            tools:context=".Views.MainActivity" />
+
+        <TextView
+            android:id="@+id/label_sos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/circle_sos"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginRight="65dp"
+            android:text="@string/label_sos"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/label_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/circle_stop"
+            android:layout_alignEnd="@+id/label_sos"
+            android:layout_alignRight="@id/circle_stop"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="37dp"
+            android:text="@string/label_stop"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/label_rain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/map"
+            android:layout_alignLeft="@+id/map"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="73dp"
+            android:text="@string/label_rain"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/label_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/map"
+            android:layout_alignLeft="@+id/map"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="99dp"
+            android:text="@string/label_temperature"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/label_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/map"
+            android:layout_alignLeft="@+id/map"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="125dp"
+            android:text="@string/label_humidity"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/label_pace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/map"
+            android:layout_alignLeft="@+id/map"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="152dp"
+            android:text="@string/label_pace"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/label_coord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/map"
+            android:layout_alignLeft="@+id/map"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="181dp"
+            android:text="@string/label_coord"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/label_rain_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/label_rain"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="154dp"
+            android:layout_marginLeft="154dp"
+            android:layout_marginTop="0dp"
+            android:text="@string/calculating" />
+
+        <TextView
+            android:id="@+id/label_temperature_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/label_temperature"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="154dp"
+            android:layout_marginLeft="154dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/calculating" />
+
+        <TextView
+            android:id="@+id/label_humidity_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/label_humidity"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="153dp"
+            android:layout_marginLeft="153dp"
+            android:layout_marginTop="0dp"
+            android:text="@string/calculating" />
+
+        <TextView
+            android:id="@+id/label_pace_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/label_risk_value"
+            android:layout_alignLeft="@+id/label_risk_value"
+            android:layout_alignTop="@+id/label_pace"
+            android:layout_marginStart="62dp"
+            android:layout_marginLeft="62dp"
+            android:layout_marginTop="0dp"
+            android:text="@string/calculating" />
+
+        <TextView
+            android:id="@+id/label_coord_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/label_temperature_value"
+            android:layout_alignLeft="@+id/label_temperature_value"
+            android:layout_alignBottom="@+id/label_coord"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginBottom="1dp"
+            android:text="@string/calculating" />
+
+        <TextView
+            android:id="@+id/label_group_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/map"
+            android:layout_alignLeft="@+id/map"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="210dp"
+            android:text="@string/label_group_level"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/label_group_level_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/label_humidity"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="155dp"
+            android:layout_marginLeft="155dp"
+            android:layout_marginTop="85dp"
+            android:text="@string/calculating" />
+
+        <TextView
+            android:id="@+id/label_total_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/map"
+            android:layout_alignLeft="@+id/map"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="239dp"
+            android:text="@string/label_total_distance"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/label_total_distance_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/label_humidity"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="155dp"
+            android:layout_marginLeft="155dp"
+            android:layout_marginTop="114dp"
+            android:text="@string/calculating" />
+
+        <TextView
+            android:id="@+id/label_risk_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/label_humidity"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="93dp"
+            android:layout_marginLeft="93dp"
+            android:layout_marginTop="134dp"
+            android:text="@string/label_low_risk"
+            android:textColor="@color/colorLogoLight"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/label_risk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/map"
+            android:layout_alignLeft="@+id/map"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="268dp"
+            android:text="@string/label_risk"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="109dp"
+            android:layout_height="128dp"
+            android:layout_alignTop="@+id/label_rain"
+            android:layout_alignEnd="@+id/label_sos"
+            android:layout_alignRight="@id/label_sos"
+            android:layout_marginEnd="-51dp"
+            android:layout_marginRight="-51dp"/>
+    </RelativeLayout>
+</RelativeLayout>

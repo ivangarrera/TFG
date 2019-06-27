@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/toolbar_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryDark">
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/logo_trans" />
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <RelativeLayout
+            android:id="@+id/form_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/label_see_alerts_in_interval"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="70dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:text="Ver todas las alertas en los últimos"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@android:color/black" />
+
+            <NumberPicker
+                android:id="@+id/picker_alerts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_see_alerts_in_interval"
+                android:layout_marginStart="90dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="@dimen/fab_margin" />
+
+            <NumberPicker
+                android:id="@+id/picker_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_see_alerts_in_interval"
+                android:layout_marginStart="200dp"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="@dimen/fab_margin" />
+
+            <ListView
+                android:id="@+id/lv_alerts_last_hours"
+                android:layout_width="match_parent"
+                android:layout_height="194dp"
+                android:layout_below="@+id/picker_alerts"
+                android:layout_marginTop="@dimen/fab_margin" />
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/lv_alerts_last_hours"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:background="?android:attr/listDivider"
+                />
+
+            <TextView
+                android:id="@+id/label_see_participants_in_interval"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider1"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:layout_marginLeft="0dp"
+                android:text="Ver participantes a más de"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@android:color/black" />
+
+            <NumberPicker
+                android:id="@+id/picker_meters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_see_participants_in_interval"
+                android:layout_marginStart="90dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="@dimen/fab_margin" />
+
+            <NumberPicker
+                android:id="@+id/picker_meters_string"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_see_participants_in_interval"
+                android:layout_marginStart="200dp"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="@dimen/fab_margin" />
+
+            <ListView
+                android:id="@+id/lv_participants_meters"
+                android:layout_width="match_parent"
+                android:layout_height="194dp"
+                android:layout_below="@+id/picker_meters"
+                android:layout_marginTop="@dimen/fab_margin" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/lv_participants_meters"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:background="?android:attr/listDivider"/>
+
+            <TextView
+                android:id="@+id/number_stops"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider2"
+                android:text="5"
+                android:textSize="24sp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:layout_marginLeft="@dimen/fab_margin"/>
+
+            <TextView
+                android:id="@+id/stops_string"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider2"
+                android:text="participantes han solicitado parar en los últimos 60 minutos"
+                android:layout_marginRight="40dp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:layout_marginLeft="40dp"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_stop"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/number_stops"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="19dp"
+                android:text="Realizar Parada"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/btn_stop"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:background="?android:attr/listDivider"/>
+
+            <TextView
+                android:id="@+id/number_battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider3"
+                android:text="5"
+                android:textSize="24sp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:layout_marginLeft="@dimen/fab_margin"/>
+
+            <TextView
+                android:id="@+id/battery_string"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider3"
+                android:text="participantes tienen un nivel de batería inferior al"
+                android:layout_marginRight="40dp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:textSize="18sp"
+                android:layout_marginLeft="40dp"/>
+
+            <NumberPicker
+                android:id="@+id/picker_battery_level"
+                android:layout_width="30dp"
+                android:layout_height="90dp"
+                android:layout_below="@id/battery_string"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="1dp" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/picker_battery_level"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:layout_marginBottom="@dimen/fab_margin"
+                android:background="?android:attr/listDivider"/>
+
+            <Button
+                android:id="@+id/btn_repeat"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/divider4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="19dp"
+                android:text="Repetir Búsqueda"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

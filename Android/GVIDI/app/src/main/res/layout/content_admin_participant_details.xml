@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout"
+    tools:context="com.example.ivangarrera.example.Views.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryDark">
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/logo_trans" />
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/img_back_participant_details"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="69dp"
+        android:src="@drawable/leftarrow" />
+
+    <TextView
+        android:id="@+id/lbl_title"
+        android:layout_width="242dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginLeft="-3dp"
+        android:layout_marginTop="74dp"
+        android:layout_toEndOf="@+id/lbl_participant_alerts"
+        android:layout_toRightOf="@+id/lbl_participant_alerts"
+        android:text="@string/label_title_extended_activity"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lbl_participant_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="127dp"
+        android:text="@string/label_participant_name"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/lbl_participant_name_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lbl_participant_name"
+        android:layout_alignLeft="@+id/lbl_participant_name"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="167dp"
+        android:layout_marginLeft="167dp"
+        android:layout_marginTop="128dp"
+        android:text="@string/calculating"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/lbl_participant_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lbl_participant_coord"
+        android:layout_alignLeft="@+id/lbl_participant_coord"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="155dp"
+        android:text="@string/label_participant_email"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/lbl_participant_email_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lbl_participant_coord_value"
+        android:layout_alignLeft="@+id/lbl_participant_coord_value"
+        android:layout_alignTop="@+id/lbl_participant_email"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/calculating"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/lbl_participant_coord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lbl_participant_name"
+        android:layout_alignLeft="@+id/lbl_participant_name"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="188dp"
+        android:text="@string/label_coordinates"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/lbl_participant_coord_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lbl_participant_email"
+        android:layout_alignLeft="@+id/lbl_participant_email"
+        android:layout_alignTop="@+id/lbl_participant_coord"
+        android:layout_marginStart="167dp"
+        android:layout_marginLeft="167dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/calculating"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/lbl_participant_alerts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lbl_participant_coord"
+        android:layout_alignLeft="@+id/lbl_participant_coord"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="340dp"
+        android:text="@string/label_participant_alerts"
+        android:textColor="@android:color/black" />
+
+    <ListView
+        android:id="@+id/list_view_alerts"
+        android:layout_width="276dp"
+        android:layout_height="208dp"
+        android:layout_alignStart="@+id/lbl_participant_coord_value"
+        android:layout_alignLeft="@+id/lbl_participant_coord_value"
+        android:layout_alignTop="@+id/lbl_participant_alerts"
+        android:layout_marginStart="-105dp"
+        android:layout_marginLeft="-105dp"
+        android:layout_marginTop="0dp"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/lbl_participant_battery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lbl_participant_coord"
+        android:layout_alignLeft="@+id/lbl_participant_coord"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="219dp"
+        android:text="@string/label_battery_level"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/lbl_participant_battery_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lbl_participant_coord_value"
+        android:layout_alignLeft="@+id/lbl_participant_coord_value"
+        android:layout_alignBottom="@+id/lbl_participant_battery"
+        android:layout_marginStart="-1dp"
+        android:layout_marginLeft="-1dp"
+        android:layout_marginBottom="0dp"
+        android:text="@string/calculating"
+        android:textColor="@color/colorLogoLight"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lbl_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lbl_participant_coord"
+        android:layout_alignLeft="@+id/lbl_participant_coord"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="250dp"
+        android:text="@string/label_distance"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/lbl_distance_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lbl_participant_coord_value"
+        android:layout_alignLeft="@+id/lbl_participant_coord_value"
+        android:layout_alignTop="@+id/lbl_distance"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/calculating"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/lbl_avg_pace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lbl_participant_coord"
+        android:layout_alignLeft="@+id/lbl_participant_coord"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="280dp"
+        android:text="@string/label_avg_pace"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/lbl_avg_pace_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lbl_participant_coord_value"
+        android:layout_alignLeft="@+id/lbl_participant_coord_value"
+        android:layout_alignTop="@+id/lbl_avg_pace"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/calculating"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/lbl_current_pace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lbl_participant_coord"
+        android:layout_alignLeft="@+id/lbl_participant_coord"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="310dp"
+        android:text="@string/label_current_pace"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/lbl_current_pace_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lbl_participant_coord_value"
+        android:layout_alignLeft="@+id/lbl_participant_coord_value"
+        android:layout_alignTop="@+id/lbl_current_pace"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/calculating"
+        android:textColor="@android:color/black" />
+
+
+</RelativeLayout>

@@ -1,0 +1,59 @@
+\chapter{Conclusiones}
+\label{chap:conclusiones}
+
+\drop{E}{n} los últimos tiempos la mayoría de los deportes han sufrido una profesionalización por parte de los deportistas aficionados. En gran medida, las nuevas tecnologías han sido culpables de esta profesionalización, ya que han permitido a los deportistas entrenar mejor en el mismo tiempo. El senderismo y otros deportes relacionados con las expediciones en la montaña son un buen ejemplo de esta experticia ya que los usuarios de estos deportes cada vez buscan metas más difíciles de alcanzar y, por tanto, más peligrosas en muchos casos. En el caso del senderismo, los usuarios aumentan el nivel de peligrosidad de las expediciones que realizan conforme van tomando experiencia en el deporte. En muchas ocasiones, un guía comanda los grupos de expedición para velar por la seguridad de los participantes pero agentes como la separación entre los integrantes del grupo pueden hacer que el guía no sea consciente de la situación del grupo en un instante dado. Además, no existen dispositivos o aplicaciones que realicen un análisis de riesgos (riesgo de caída y grado de separación del grupo, entre otros) a nivel grupal sino que las alternativas existentes en el mercado se centran en el análisis individual de cada uno de los participantes. Este proyecto proporciona una visión global del grupo de expedición que no proporcionan otros dispositivos o aplicaciones actualmente en el mercado, por lo que el uso de la herramienta desarrollada a lo largo de este proyecto realmente mejora la seguridad de los usuarios de la expedición. 
+
+En este proyecto se ha realizado un dispositivo físico, una aplicación móvil y una plataforma \textit{web} que servirá como ayuda tanto a los guías de senderismo como a los participantes de la expedición. Ambos podrán visualizar tanto en tiempo real como de forma histórica información relevante sobre la expedición.
+
+\begin{itemize}
+\item El proyecto ayuda a los guías a mantener un mejor control de los participantes en una expedición, maximizando la seguridad de los integrantes de la expedición.
+\item Los participantes de la expedición pueden visualizar tanto en tiempo real como de forma histórica información sobre la expedición realizada. 
+\end{itemize}
+
+El proyecto monitoriza el estado de los integrantes de la ruta (su ritmo, nivel de batería, alertas generadas, etc.) y lo envía al guía de la expedición. Ante estos datos, el guía puede actuar en consecuencia con una mayor rapidez, mejorando la seguridad de los usuarios de la ruta.
+
+El microcontrolador se encarga de tomar datos de los sensores que tiene conectados y enviarlos a través de una conexión \textit{Bluetooth} a la aplicación móvil desarrollada. Los datos que recoge son los siguientes: 
+
+\begin{itemize}
+\item Datos de aceleración lineal para realizar la detección de caídas.
+\item Datos de geolocalización para situar al usuario en el grupo de expedición.
+\item Datos de temperatura, humedad, iluminación y lluvia para realizar un análisis del riesgo de caída.
+\end{itemize}
+
+La aplicación móvil que se ha desarrollado se encarga de realizar un procesamiento de los datos que recibe del microcontrolador (también utiliza datos captados en la propia aplicación a través de \ac{API}s externas) para obtener información acerca de posibles caídas de un individuo en un momento dado, información del riesgo de caída en tiempo real e información del grado de agrupación del grupo de senderismo. Toda esta información es mostrada al usuario de una forma amigable, con el fin de que no tenga que interrumpir su actividad para manipular las tecnologías que se presentan en este proyecto.
+
+Por último, se ha desarrollado una plataforma \textit{web} que permite la visualización de estadísticas sobre las expediciones realizadas por un usuario de forma histórica, por lo que un usuario puede analizar todas las rutas realizadas una vez que éstas han concluido. Del mismo modo, permite visualizar en tiempo real información acerca de una expedición en curso, por lo que terceras personas (como familiares o amigos del senderista) pueden ver dónde se encuentra el senderista en tiempo real.
+
+Tal como se muestra en el capítulo de Resultados (Capítulo \ref{chap:resultados}), la experimentación diseñada para probar cada una de las partes desarrolladas ha demostrado el correcto funcionamiento de todos los módulos que conforman el sistema, por lo que todos los objetivos propuestos inicialmente (definidos en el Capítulo \ref{chap:objetivos}) se han cumplido. Se ha diseñado y desarrollado de forma satisfactoria el dispositivo físico (incluyendo la \ac{PCB} para simplificar el diseño y eliminar los cables de prototipado). La aplicación móvil implementada tiene toda la funcionalidad que se propuso al inicio de este proyecto y además se ha cumplido también con el objetivo del análisis inteligente de la información tomada por los sensores y el dispositivo móvil.
+
+También se ha cumplido el objetivo del desarrollo e implementación de una plataforma \textit{web}, con un diseño \textit{responsive} y la posibilidad tanto de visualizar en tiempo real una expedición actualmente en curso, como de visualizar información histórica acerca de expediciones realizadas con anterioridad.
+
+Un punto clave a destacar en este proyecto es la novedad del mismo. Actualmente no existen sistemas de características similares en los que se haga una monitorización a nivel de grupo y un análisis inteligente de riesgos. Es un proyecto que tiene una utilidad real en expediciones en la montaña porque en el mercado actual existe la demanda de un producto que ofrezca la funcionalidad propuesta. A continuación se exponen las ventajas en el uso de la herramienta desarrollada a lo largo de este proyecto:
+
+\begin{itemize}
+\item Es un proyecto \textbf{innovador}. Como se ha comentado anteriormente los dispositivos o aplicaciones que existen en el mercado actualmente para senderistas se centran en un análisis individual mientras que la herramienta presentada en este proyecto basa su uso en el análisis grupal.
+\item Es un proyecto \textbf{multidisciplinar}. A lo largo de este proyecto se han trabajado distintas áreas ya que se ha realizado un dispositivo físico basado en un microcontrolador y se ha equipado con sensores. También se ha desarrollado una aplicación móvil para el sistema operativo \textit{Android}, se ha desarrollado una plataforma \textit{web} siguiendo una arquitectura cliente-servidor y se ha trabajado en la comunicación inalámbrica entre el dispositivo físico y la aplicación móvil.
+\item En este proyecto se realiza un análisis de datos usando un modelo matemático complejo, como es la lógica difusa. Este análisis es más propio de otras intensificaciones distintas a la mía (Ingeniería de Computadores), por lo que además de cumplir con las competencias propias de mi intensificación (justificadas en la Sección \ref{competencias-inten}) se han cumplido competencias de otras intensificaciones.
+\item Las distintas partes desarrolladas y que conforman este proyecto funcionan correctamente, como se ha observado en el Capítulo \ref{chap:resultados}.
+\end{itemize}
+
+A lo largo de este proyecto he aplicado y sobre todo afianzado conocimientos adquiridos a lo largo del grado. Por ejemplo, he aplicado muchos conocimientos adquiridos en las asignaturas específicas de la intensificación de Ingeniería de Computadores como son los relacionados con los microcontroladores y las redes de comunicaciones. También han sido útiles los conocimientos de asignaturas relacionadas con la Ingeniería del \textit{Software} para plantear un buen diseño de la aplicación móvil y la plataforma \textit{web}. Por último, en este proyecto he adquirido nuevos conocimientos entre los que destacan la gestión de proyectos de larga duración, el aprendizaje de tecnologías \textit{web} en auge como son \texttt{node} y \texttt{react} y el uso de servicios \textit{cloud} como \texttt{Firebase} y \texttt{Firestore} para incrementar la eficiencia en el desarrollo de proyectos \textit{software}. 
+
+\section{Trabajo futuro}
+
+Las líneas de trabajo futuro más destacables para continuar con este proyecto son:
+
+\begin{itemize}
+\item Mejora del algoritmo de detección de caídas. Se proponen dos posibles formas de mejorar el algoritmo de detección de caídas basado en umbrales que se ha implementado en este proyecto:
+\begin{itemize}
+\item A través de la inclusión de más datos que puedan inferir una posible caída. Por ejemplo, datos de pulso cardíaco ya que un aumento repentino en el pulso cardíaco acompañado de unos datos de aceleración anómalos pueden servir para mejorar el detector de caídas. Otro sensor que podría resultar útil es un sensor de vibración, que podría dar picos de valores de vibración cuando existe una caída. Estos sensores son bastante más caros que los usados en este proyecto y para minimizar los costes del dispositivo desarrollado se eligió no hacer uso de los mismos.
+\item Realizando el algoritmo de detección de caídas en el microcontrolador \textit{Arduino}, en vez de en el dispositivo móvil. De esta forma, se perderían menos datos de aceleración, porque no es necesarios enviarlos por \textit{Bluetooth}, y los resultados del detector de caídas podrían ser mejores.
+\end{itemize}
+
+\item Mostrar a los guías los datos de todos los participantes en la plataforma \textit{web}. En este proyecto se ha optado por mostrar al guía los datos de todos los participantes en la aplicación móvil, ya que el guía debe portar el dispositivo móvil durante la expedición para visualizar las alertas que en ésta se generan y poder tomar decisiones que maximicen la seguridad del grupo lo más rápido posible. Sin embargo, en la plataforma \textit{web} solo se visualizan los datos individuales del usuario (independientemente de si el usuario es un guía o un participante).
+
+\item Minimizar el tamaño del dispositivo físico y ajustarlo al tamaño de un reloj. En el prototipo desarrollado en este proyecto, se ha usado \texttt{Arduino UNO} como microcontrolador. Este microcontrolador tiene un tamaño bastante grande, por lo que no es factible usarlo a modo de reloj de pulsera. Se podría hacer uso de un microcontrolador mucho más pequeño como el \texttt{Arduino Pico} y se podría sustituir la \ac{PCB} de dos capas diseñada por una \ac{PCB} flexible, para que se ajuste a la muñeca del usuario. De igual forma, habría que buscar sensores más pequeños para integrarlos todos en la \ac{PCB}.
+
+\item Desarrollar una aplicación móvil para el sistema operativo \texttt{iOS}, ya que la aplicación móvil desarrollada en este proyecto sólo funciona en dispositivos móviles con un sistema operativo \textit{Android}.
+\end{itemize}
+
