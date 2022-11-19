@@ -3,7 +3,7 @@
   <p align="center">
      <code>GVIDI</code> is a novel hardware and software system that uses AI and AR techniques. The system facilitates the analysis of expedition groups avoiding dispersion. It includes risk assessment to support decision making, and reduces situations that can lead to accidents.
     <br>
-    <a href="https://github.com/ivangarrera/TFG/issues/new">Report bug</a>
+    <a href="https://github.com/ivangarrera/GVIDI/issues/new">Report bug</a>
   </p>
 </p>
 
@@ -37,7 +37,7 @@ folder1/
 
 ## Bugs and feature requests
 
-Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/ivangarrera/TFG/issues/new).
+Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/ivangarrera/GVIDI/issues/new).
 
 ## Contributing
 
@@ -51,6 +51,6 @@ GVIDI is free software, which means you can use the source code as you wish, wit
 
 ## Copyright and license
 
-Code released under the [MIT License](https://github.com/ivangarrera/TFG/blob/master/LICENSE).
+Code released under the [MIT License](https://github.com/ivangarrera/GVIDI/blob/master/LICENSE).
 
 Enjoy :metal:
